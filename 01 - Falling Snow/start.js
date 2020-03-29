@@ -7,7 +7,7 @@
     return {
       canvas, // กำหนด canvas ใน html
       canvasContext: canvas.getContext('2d'),
-      numberOfSnowBalls: 300
+      numberOfSnowBalls: 280
     }
   }
 
@@ -22,9 +22,9 @@
       return {
         x: random(0, canvas.width), // กำหนดให้ random ค่า 0(ซ้ายสุด) - maximum(ขวาสุด) ของหน้าจอ
         y: random(0, canvas.height), // กำหนดให้ ramdom ค่า 0(ล่างสุด) - maximum(บนสุด) ของหน้าจอ
-        opacity: random(0.4,1),
+        opacity: random(0.5,0.8),
         radius: random(1,4),
-        speedX: random(-5, 5),
+        speedX: random(-4, 3),
         speedY: random(1, 3)
       }
     })
@@ -56,7 +56,7 @@
     const { canvas, canvasContext, numberOfSnowBalls } = setup()
     // ดึงค่าแต่ละค่าของค่าที่ return ออกมาจาก function run
     const snowBalls = createSnowBall(canvas, numberOfSnowBalls)
-    console.log(snowBalls)
+
     setInterval(() => {
       canvasContext.clearRect(0, 0, canvas.width, canvas.height)
       // ลบ canvas อันเก่าออกก่อนที่จะวาดอันใหม่
